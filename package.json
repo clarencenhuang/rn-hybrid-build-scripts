@@ -1,0 +1,26 @@
+{
+  "name": "rn-hybrid-build-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "build-app": "bin/build.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarencenhuang/rn-hybrid-build-scripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clarencenhuang/rn-hybrid-build-scripts/issues"
+  },
+  "homepage": "https://github.com/clarencenhuang/rn-hybrid-build-scripts#readme",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  }
+}
