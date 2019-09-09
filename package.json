@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "build-app": "bin/build.js"
+    "build-app": "bin/build.js",
+    "open-xcode": "bin/open-xcode.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
