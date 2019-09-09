@@ -1,6 +1,10 @@
 #! /usr/bin/env node
+const shell = require("shelljs");
 let fs= require('fs');
 let data = fs.readFileSync('./build/index.html', 'utf8');
+
+shell.exec("rm -rf www");
+shell.exec("react-scripts build");
 
 function insertContent(fullContent, beforeWhat, newContent) {
   const position = fullContent.indexOf(beforeWhat);
@@ -23,5 +27,10 @@ afterAddingScript = afterAddingScript.replace(/="\/static\//g, '="static/');
 fs.writeFile('./build/index.html', afterAddingScript, 'utf8', (err)=> {
   if(err) {
     throw err
-  }
+  } else postBuild();
 });
+
+function postBuild() {
+  shell.exec("mv build www");
+  shell.exec("cordova prepare ios");
+}
