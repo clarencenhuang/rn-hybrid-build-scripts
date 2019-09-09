@@ -1,11 +1,13 @@
 #! /usr/bin/env node
 const shell = require("shelljs");
 let fs= require('fs');
-let data = fs.readFileSync('./build/index.html', 'utf8');
 
+console.log("*** BUILDING APP ***")
 shell.exec("rm -rf www");
-shell.exec("react-scripts build");
+shell.exec("SKIP_PREFLIGHT_CHECK=true react-scripts build");
 
+console.log("*** Creating NATIVE BUILD ***")
+let data = fs.readFileSync('./build/index.html', 'utf8');
 function insertContent(fullContent, beforeWhat, newContent) {
   const position = fullContent.indexOf(beforeWhat);
   let fullContentCopy = fullContent.split('');
@@ -31,6 +33,7 @@ fs.writeFile('./build/index.html', afterAddingScript, 'utf8', (err)=> {
 });
 
 function postBuild() {
+  console.log("*** Running POSTBUILD ***")
   shell.exec("mv build www");
   shell.exec("cordova prepare ios");
 }
