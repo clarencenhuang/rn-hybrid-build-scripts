@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/clarencenhuang/rn-hybrid-build-scripts#readme",
   "dependencies": {
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.5"
   }
 }
